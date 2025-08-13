@@ -51,10 +51,10 @@
 #define LED_D0_PIN      8   // GPIO pin for D0 output
 #define LED_NCHANS      8   // Number of LED channels (8 or 16)
 #define LED_NBITS       24  // Number of data bits per LED
-#define LED_PREBITS     4   // Number of zero bits before LED data
-#define LED_POSTBITS    4   // Number of zero bits after LED data
+#define LED_PREBITS     10  // Number of zero bits before LED data
+#define LED_POSTBITS    80   // Number of zero bits after LED data
 #define BIT_NPULSES     3   // Number of O/P pulses per LED bit
-#define CHAN_MAXLEDS    50  // Maximum number of LEDs per channel
+#define CHAN_MAXLEDS    360  // Maximum number of LEDs per channel
 #define CHASE_MSEC      100 // Delay time for chaser light test
 #define REQUEST_THRESH  2   // DMA request threshold
 #define DMA_CHAN        10  // DMA channel to use
