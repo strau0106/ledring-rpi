@@ -51,10 +51,10 @@
 #define LED_D0_PIN      8   // GPIO pin for D0 output
 #define LED_NCHANS      8   // Number of LED channels (8 or 16)
 #define LED_NBITS       24  // Number of data bits per LED
-#define LED_PREBITS     10  // Number of zero bits before LED data
+#define LED_PREBITS     50  // Number of zero bits before LED data
 #define LED_POSTBITS    80   // Number of zero bits after LED data
 #define BIT_NPULSES     3   // Number of O/P pulses per LED bit
-#define CHAN_MAXLEDS    360  // Maximum number of LEDs per channel
+#define CHAN_MAXLEDS    950  // Maximum number of LEDs per channel
 #define CHASE_MSEC      100 // Delay time for chaser light test
 #define REQUEST_THRESH  2   // DMA request threshold
 #define DMA_CHAN        10  // DMA channel to use
@@ -116,7 +116,7 @@ int str_rgb(char *s, int rgbs[][LED_NCHANS], int chan);
 void swap_bytes(void *data, int len);
 int hexdig(char c);
 void map_devices(void);
-void fail(char *s);
+//void fail(char *s);
 void terminate(int sig);
 void init_smi(int width, int ns, int setup, int hold, int strobe);
 void setup_smi_dma(MEM_MAP *mp, int nsamp);
@@ -286,13 +286,13 @@ void map_devices(void)
     map_periph(&clk_regs, (void *)CLK_BASE, PAGE_SIZE);
     map_periph(&smi_regs, (void *)SMI_BASE, PAGE_SIZE);
 }
-
+/*
 // Catastrophic failure in initial setup
 void fail(char *s)
 {
     printf(s);
     terminate(0);
-}
+}*/
 
 // Free memory segments and exit
 void terminate(int sig)

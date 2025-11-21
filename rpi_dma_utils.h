@@ -168,6 +168,7 @@ typedef struct {
 #define CLK_PASSWD      0x5a000000
 #define PWM_CLOCK_ID    0xa
 
+void terminate(int sig);
 void fail(char *s);
 void *map_periph(MEM_MAP *mp, void *phys, int size);
 void *map_uncached_mem(MEM_MAP *mp, int size);

@@ -343,4 +343,13 @@ void stop_pwm(void)
     }
 }
 
+// Catastrophic failure in initial setup
+void fail(char *s)
+{
+    printf(s);
+    terminate(0);
+}
+
+
+
 // EOF
